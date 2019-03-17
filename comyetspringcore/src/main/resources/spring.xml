@@ -1,17 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
 
     <import resource="loggers.xml" />
 
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:client.properties</value>
+            </list>
+        </property>
+        <property name="ignoreResourceNotFound" value="true" />
+        <property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+    </bean>
     <bean id="client" class="com.learning.spring.core.beans.Client">
         <constructor-arg type="java.lang.String"
-                         value="1"/>
+                         value="${id}"/>
         <constructor-arg type="java.lang.String"
-                         value="John Smith"/>
+                         value="${name}"/>
         <property name="greeting"
-                  value="Hello there !!" />
+                  value="${greeting}" />
     </bean>
     <bean id="app"
           class="com.learning.spring.core.App">
