@@ -1,6 +1,7 @@
 package com.learning.spring.core;
 
 import com.learning.spring.core.beans.Client;
+import com.learning.spring.core.events.Event;
 import com.learning.spring.core.loggers.ConsoleEventLogger;
 import com.learning.spring.core.loggers.EventLogger;
 import org.omg.CORBA.portable.ApplicationException;
@@ -16,9 +17,8 @@ public class App {
         this.eventLogger = eventLogger;
     }
 
-    void logEvent(final String msg) {
-        final String message = msg.replaceAll(client.getId(), client.getFullName());
-        eventLogger.logEvent(message);
+    void logEvent(final Event event) {
+        eventLogger.logEvent(event);
     }
 
     public static void main(String[] args) {
@@ -26,6 +26,9 @@ public class App {
                 new ClassPathXmlApplicationContext("spring.xml");
 
         App app = (App) applicationContext.getBean("app");
-        app.logEvent("Some event for use 1");
+        Event evt0 = (Event) applicationContext.getBean("event");
+        app.logEvent(evt0);
+        Event evt1 = (Event) applicationContext.getBean("event");
+        app.logEvent(evt1);
     }
 }
