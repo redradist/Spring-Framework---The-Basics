@@ -3,30 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <import resource="loggers.xml" />
+
     <bean id="client" class="com.learning.spring.core.beans.Client">
         <constructor-arg type="java.lang.String"
                          value="1"/>
         <constructor-arg type="java.lang.String"
                          value="John Smith"/>
     </bean>
-    <bean id="eventLogger"
-          class="com.learning.spring.core.loggers.ConsoleEventLogger"/>
-    <bean id="fileEventLogger"
-          class="com.learning.spring.core.loggers.FileEventLogger"
-          init-method="init">
-        <constructor-arg value="my_file.txt"/>
-    </bean>
-    <bean id="cacheFileEventLogger"
-          class="com.learning.spring.core.loggers.CacheFileEventLogger"
-          init-method="init"
-          destroy-method="destroy">
-        <constructor-arg value="my_file.txt"/>
-        <constructor-arg value="100"/>
-    </bean>
     <bean id="app"
           class="com.learning.spring.core.App">
         <constructor-arg ref="client"/>
-        <constructor-arg ref="eventLogger"/>
+        <constructor-arg ref="consoleLogger"/>
     </bean>
     <bean id="event" class="com.learning.spring.core.events.Event"
           scope="prototype">
