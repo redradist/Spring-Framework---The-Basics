@@ -14,6 +14,15 @@ public class Client {
         return fullName;
     }
 
+    public String getGreeting() {
+        return greeting;
+    }
+
+    public void setGreeting(String greeting) {
+        this.greeting = greeting;
+    }
+
     private String id;
     private String fullName;
+    private String greeting;
 }

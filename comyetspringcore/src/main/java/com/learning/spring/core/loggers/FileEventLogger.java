@@ -9,7 +9,7 @@ public class FileEventLogger implements EventLogger {
     private String fileName;
     private File file = null;
 
-    FileEventLogger(final String fileName) {
+    public FileEventLogger(final String fileName) {
         this.fileName = fileName;
     }
 
