@@ -1,3 +1,8 @@
+package com.learning.spring.core;
+
+import com.learning.spring.core.beans.Client;
+import com.learning.spring.core.loggers.ConsoleEventLogger;
+
 public class App {
     private Client client;
     private ConsoleEventLogger eventLogger;

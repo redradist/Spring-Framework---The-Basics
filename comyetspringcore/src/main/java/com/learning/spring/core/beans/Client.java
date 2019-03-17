@@ -1,5 +1,7 @@
-class Client {
-    Client(String id, String fullName) {
+package com.learning.spring.core.beans;
+
+public class Client {
+    public Client(String id, String fullName) {
         this.id = id;
         this.fullName = fullName;
     }
