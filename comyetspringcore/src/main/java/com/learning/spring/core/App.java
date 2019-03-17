@@ -2,15 +2,16 @@ package com.learning.spring.core;
 
 import com.learning.spring.core.beans.Client;
 import com.learning.spring.core.loggers.ConsoleEventLogger;
+import com.learning.spring.core.loggers.EventLogger;
 import org.omg.CORBA.portable.ApplicationException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class App {
     private Client client;
-    private ConsoleEventLogger eventLogger;
+    private EventLogger eventLogger;
 
-    private App(final Client client, final ConsoleEventLogger eventLogger) {
+    private App(final Client client, final EventLogger eventLogger) {
         this.client = client;
         this.eventLogger = eventLogger;
     }
