@@ -14,22 +14,22 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.springframework</groupId>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.ver}</version>
         </dependency>
         <dependency>
-            <groupId>com.springframework</groupId>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-context-support</artifactId>
             <version>${spring.ver}</version>
         </dependency>
         <dependency>
-            <groupId>com.springframework</groupId>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-tx</artifactId>
             <version>${spring.ver}</version>
         </dependency>
         <dependency>
-            <groupId>com.springframework</groupId>
+            <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
             <version>${spring.ver}</version>
         </dependency>
